@@ -5,13 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Components</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <shop-item name="Vase" image="./assets/images/vase.jpg">
-      <div slot="price">99 €</div>
+    <div class="items">
+      <shop-item name="Vase" image="./assets/images/vase.jpg">
+        <div slot="price">200 €</div>
 
-      <div slot="description">Dolor qui ad fugiat velit proident minim.</div>
-    </shop-item>
+        <div slot="description">
+          Aliqua ad fugiat ea esse deserunt do anim fugiat mollit aliquip ex
+          voluptate. Aliqua exercitation qui duis incididunt do labore enim in
+          magna incididunt incididunt. Sunt ullamco aliqua duis fugiat minim
+          fugiat fugiat.
+        </div>
+      </shop-item>
+
+      <shop-item name="Lamp" image="./assets/images/lamp.jpg">
+        <div slot="price">110 €</div>
+
+        <div slot="description">
+          Sit Lorem dolore duis dolor. Dolore consequat elit aute ullamco
+          nostrud sit et. Commodo dolore id pariatur quis consectetur aliquip.
+          Officia voluptate aliquip anim velit velit aute sit voluptate
+          cupidatat in ad fugiat. Fugiat adipisicing ex enim Lorem ipsum ex
+          pariatur. Anim reprehenderit tempor non culpa proident aliqua
+          consequat culpa. Do aliqua est eiusmod reprehenderit esse elit in
+          dolore commodo fugiat.
+        </div>
+      </shop-item>
+
+      <shop-item name="Table" image="./assets/images/table.jpg">
+        <div slot="price">75 €</div>
+
+        <div slot="description">
+          Et ad fugiat fugiat proident mollit Lorem duis exercitation. Dolore
+          labore reprehenderit magna labore deserunt sint consequat veniam eu
+          mollit laborum. Cillum do duis pariatur mollit sit. In ipsum labore
+          sit est enim et in culpa irure duis amet id. Dolore occaecat non nulla
+          commodo in elit. Magna commodo deserunt fugiat aliqua est proident
+          cupidatat amet fugiat labore exercitation.
+        </div>
+      </shop-item>
+    </div>
 
     <script src="./shop-item/shopItem.js"></script>
   </body>

@@ -3,39 +3,51 @@ template.innerHTML = `
     <style>
         .item {
             display: grid;
+            width: 100%;
             grid-gap: 1rem;
             padding: 1rem;
             grid-template-areas:
-                "image name"
-                "image price"
-                "image toggle"
-                "image description";
-            grid-template-rows: auto auto auto auto;
-            grid-template-columns: 200px auto;
-            background-color: rgba(130, 130, 130, 0.3)
+                "image name price"
+                "image toggle toggle"
+                "image description description";
+            grid-template-rows: 2rem 2rem minmax(auto, calc(100% - 4rem));
+            grid-template-columns: 200px 1fr 1fr;
+            border-radius: 4px;
+            background-color: rgba(130, 130, 130, 0.2);
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
         }
 
         .image {
             grid-area: image;
             width: 100%;
             height: auto;
+            border-radius: 4px;
         }
 
         .name {
             grid-area: name;
+            line-height: 2rem;
             margin: 0;
         }
 
         .price {
             grid-area: price;
+            line-height: 2rem;
+            text-align: right;
         }
 
         .toggle {
             grid-area: toggle;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            border-bottom: 1px solid rgba(130, 130, 130, 0.4);
+            cursor: pointer;
         }
 
         .description {
             grid-area: description;
+            margin: 0;
         }
 
         .hidden {
@@ -52,9 +64,9 @@ template.innerHTML = `
             <slot name="price" />
         </div>
 
-        <button class="toggle">Hide Description</button>
+        <button class="toggle">Show Description</button>
 
-        <p class="description">
+        <p class="description hidden">
             <slot name="description" />
         </p>
     </div>
@@ -64,7 +76,7 @@ class ShopItem extends HTMLElement {
   constructor() {
     super();
 
-    this.visibility = true;
+    this.visibility = false;
 
     this.attachShadow({ mode: "open" });
     this.shadowRoot.appendChild(template.content.cloneNode(true));
