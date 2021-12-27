@@ -1,3 +1,9 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
 .items {
   display: grid;
   grid-gap: 1rem;
@@ -5,8 +11,6 @@
   margin-bottom: 1rem;
   grid-template-columns: repeat(1, 1fr);
   border-radius: 4px;
-  background-color: rgba(130, 130, 130, 0.2);
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 @media only screen and (min-width: 960px) {
@@ -24,4 +28,5 @@
 .items > * {
   display: flex;
   justify-content: stretch;
+  max-height: 350px;
 }

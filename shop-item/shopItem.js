@@ -48,6 +48,7 @@ template.innerHTML = `
         .description {
             grid-area: description;
             margin: 0;
+            overflow: auto;
         }
 
         .hidden {
